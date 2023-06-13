@@ -1,0 +1,19 @@
+.mynbgc {
+  background-color: rgba(13, 14, 34, 255);
+}
+
+.bordered {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(13, 14, 34, 255);
+}
+
+.min-lw {
+  min-width: 400px;
+}
+
+.form-control::placeholder{
+  color: gray;
+}
+

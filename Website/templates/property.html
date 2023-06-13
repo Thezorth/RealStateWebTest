@@ -1,0 +1,52 @@
+{% extends './layout.html' %} {% block title %}{{ sitetitle }}{% endblock %} {%
+    block body %}
+
+<div class="container text-white bg-black pt-2">
+
+    <div class="d-flex flex-row justify-content-center border border-2 border-secondary border-bottom-0 border-dark-subtle mynbgc">
+        {% if property.saletype == 'sale' %}
+        <h1 class="text-center">For Sale</h1>
+        {% else %}
+        <h1 class="text-center">For Rent</h1>
+        {% endif %}
+    </div>    
+
+    <div id="carouselExample" class="carousel slide carousel-fade border border-2 border-secondary border-bottom-0 border-dark-subtle mynbgc">
+        <div class="carousel-inner">
+        {% for pic in pictures %}
+        {% if loop.index0 == 0 %}
+        <div class="carousel-item active" style="height: 100%;">
+            <img src="{{pic.link}}" class="d-block w-50 m-auto" style="height: 100%; object-fit: cover;" alt="{{pic.link}}">
+        </div>
+        {% else %}
+        <div class="carousel-item" style="height: 100%;">
+            <img src="{{pic.link}}" class="d-block w-50 m-auto" style="height: 100%; object-fit: cover;" alt="{{pic.link}}">
+        </div>
+        {% endif %}
+        {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="d-flex flex-column border border-2 border-secondary border-dark-subtle mynbgc">
+        <h4 class="text-center border border-2 border-secondary border-dark-subtle border-top-0 mb-0 border-end-0 border-start-0">Location: {{property.address}}</h4>
+        <div class="d-flex flex-row justify-content-center mt-0">
+            <h4 class="flex-fill text-center border border-2 border-secondary border-dark-subtle border-top-0 border-end-0 border-start-0">Price: {{property.value}} $</h4>
+            <h4 class="flex-fill text-center border border-2 border-secondary border-dark-subtle border-top-0 border-end-0">Square Meters: xxx</h4>
+        </div>
+        <h5 class="ps-2">Others: xxxx</h5>
+    </div>
+    <div class="d-flex justify-content-center mt-1 pb-1">
+        <a href="{{prev_url}}" class="btn btn-outline-light">Back</a>
+    </div>
+
+</div>
+
+{% endblock %}

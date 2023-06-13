@@ -1,0 +1,54 @@
+{% extends './layout.html' %}
+{% block title %}{{ sitetitle }}{% endblock %}
+{% block body %}
+
+<div class="container">
+    <div class="full-screen align-items-center justify-content-center d-flex flex-column vh-100 min-lw">
+        <div class="bordered text-white">
+            <form method="post">
+                <h3 class="text-center min-lw bg-gradient p-2 bordered bg-dark">Sign In or Register</h3>
+                <br />
+                <div class="form-group min-lw mx-3">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control text-bg-dark" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="form-group min-lw mx-3 mt-2">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control text-bg-dark" id="password" name="password"
+                        placeholder="Enter password">
+                </div>
+                <br />
+                <div class="text-center min-lw">
+                    <button type="submit" class="btn btn-primary w-25">Sing In</button>          
+                </div>
+                <div class="container d-flex mt-2 text-center justify-content-center">
+                    <div class="row m-3">
+                        <a href="/google-login">
+                        <div>
+                            <img src="../static/images/google-icon.png" width="60" height="60" alt="">
+                        </div>
+                        <div>  
+                            Sing up with google
+                        </div>
+                        </a>
+                    </div>
+                    <div class="row m-3">
+                        <a href="/login">
+                        <div>
+                            <img src="../static/images/facebook-icon.png" width="60" height="60" alt="">
+                        </div>
+                        <div>  
+                            Sing up with facebook
+                        </div>
+                        </a>
+                    </div>
+
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

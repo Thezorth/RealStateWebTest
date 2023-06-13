@@ -1,0 +1,105 @@
+{% extends './layout.html' %}{% block body %}
+
+<div class="d-flex p-0 m-0">
+  <div class="container-fluid ms-0 position-relative mynbgc vh-100 w-auto">
+    <ul
+      class="flex-column text-black text-center p-0 nav mt-2"
+      style="width: 256px; max-width: 256px"
+    >
+      <h2 class="border border-3 border-info rounded-top-5 mb-0 p-3 bg-black text-white">
+        {{user.username}}
+      </h2>
+
+      <ul class="text-center p-0">
+        
+        <p
+          class="border-start border-bottom border-end border-info border-3 p-3 m-0 bg-black"
+        >
+        <a href="/employee" class="text-decoration-none text-white">Upload Property</a>
+        </p>
+
+      </ul>
+    </ul>
+  </div>
+  <div
+    id="propertySection"
+    class="container-fluid d-flex flex-wrap flex-row position-relative ms-0 overflow-y-scroll justify-content-evenly pb-5"
+    style="height: calc(100vh - 100px); background-image: url(../static/images/ca-times.brightspotcdn.png);"
+  >
+
+  <div class="container border rounded-3 align-self-center p-0" style="background-color: rgb(5, 5, 27); background-position: center; background-size: cover ;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-style: italic;">
+
+    <form method="post" action="/addProperty" enctype=multipart/form-data>
+
+    <div class="container d-flex align-self-center">
+      <div class="container m-0 p-3">
+        <div class="form-floating m-2" style="min-width: 200px;">
+          <input type="text" class="form-control text-black bg-dark-subtle ps-3" id="formOwnerE" name="formOwnerE">
+          <label for="formOwnerE" class="text-black">Property Owner</label>      
+        </div>
+        <div class="form-floating m-2" style="min-width: 200px;">
+          <input type="number" inputmode="numeric" oninput="this.value = this.value.replace(/\D+/g, '')" class="form-control text-black bg-dark-subtle ps-3" id="formValueE" name="formValueE">
+          <label for="formValueE" class="text-black">Property Value</label>      
+        </div>
+        <div class="form-floating m-2" style="min-width: 200px">
+          <select class="form-select text-black bg-dark-subtle ps-3"
+            id="formSaleTypeE" name="formSaleTypeE"
+            aria-label="Floating label select example"
+          ><option value="rent" selected>Rent</option>
+          <option value="sale">Sale</option>
+        </select>
+          <label for="formSaleTypeE" class="text-black ">City</label>
+        </div>
+        
+      </div>
+      <div class="container m-0 p-3">
+        <div class="form-floating m-2" style="min-width: 200px">
+          <select
+            class="form-select text-black bg-dark-subtle ps-3"
+            id="formCityE" name="formCityE"
+            aria-label="Floating label select example"
+          ></select>
+          <label for="formCityE" class="text-black ">City</label>
+        </div>
+        <div class="form-floating m-2" style="min-width: 200px">
+          <select
+            class="form-select text-black bg-dark-subtle ps-3"
+            id="formStateE" name="formStateE"
+            aria-label="Floating label select example"
+            disabled
+          ></select>
+          <label for="formStateE" class="text-black " disabled
+            >State</label
+          >
+        </div>
+        <div class="form-floating m-2">
+          <textarea
+            class="form-control text-black bg-dark-subtle ps-3"
+            id="AddressE" name="AddressE"
+          ></textarea>
+          <label for="AddressE" class="text-black ">Address</label>
+        </div>
+      </div>
+    </div>
+    <div class="container d-flex align-self-center ps-5 pe-5">
+      <div class="form-control text-black bg-dark-subtle">
+        <label class="form-label">Select the files to upload</label>
+        <input class="form-control" type="file" id="formFileMultiple" name="formFileMultiple" multiple>
+      </div>      
+    </div>
+    <div
+      class="container d-flex flex-row me-3 p-3 justify-content-center align-self-center"
+    >
+      <button type="submit">Upload</button>
+    </div>
+  </form>
+
+  </div>
+
+  </div>
+</div>
+<script
+  type="module"
+  src="{{ url_for('static', filename='js/employee.js') }}"
+></script>
+{% endblock %}

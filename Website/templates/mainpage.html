@@ -1,0 +1,67 @@
+{% extends './layout.html' %}
+
+{% block customJS %}
+
+
+
+{% endblock %}
+
+{% block body %}
+<div class="d-flex p-0 m-0">
+    
+    <div class="container-fluid ms-0 position-relative mynbgc vh-100 w-auto">
+        <ul class="flex-column text-white text-center p-0 nav" style="width: 256px; max-width: 256px;">
+            <h2 class="border-bottom mb-0 p-3">Properties</h2>
+            <div class="d-flex flex-row justify-content-center border-bottom">
+
+                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnforsale" autocomplete="off" checked>
+                    <label class="btn btn-outline-warning mx-1 rounded-3 my-3" for="btnforsale">For Sale</label>
+                
+                    <input type="radio" class="btn-check" name="btnradio" id="btnforrent" autocomplete="off">
+                    <label class="btn btn-outline-warning mx-1 rounded-3 my-3" for="btnforrent">For Rent</label>
+                
+                </div>
+                
+            </div>
+            <div class="container justify-content-center p-3 nav">
+                <div class="form-floating" style="min-width: 200px;">
+                    
+                    <select class="form-select text-white text-center bg-black" id="formCity" aria-label="Floating label select example">
+
+                    </select>
+                    <label for="formCity" class="text-white text-center">City</label>
+
+                  </div>
+                  
+                  
+                  <div class="form-floating" style="min-width: 200px;">
+
+                    <select class="form-select text-white text-center bg-black" id="formState" aria-label="Floating label select example" style="display: none;">
+
+                    </select>
+                    <label for="formState" class="text-white justify-content-center" style="display: none;">State</label>
+
+                </div>
+                <div class="container p-1"><button class="w-50 bg-black text-white me-4 rounded-3" id="filter_btn">Filter</button></div>
+            </div>
+        </ul>
+    </div>
+    
+    <div id="propertySection" class="container-fluid d-flex flex-wrap flex-row position-relative ms-0 overflow-y-scroll justify-content-evenly pb-5 ps-5 pe-5" style="height: calc(100vh - 100px); background-image: url(../static/images/bulletin.jpg); background-size: 100%; background-repeat: no-repeat; background-size: cover;">
+
+    </div>
+    
+    
+    
+
+</div>
+
+<script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+{% endblock %}
+
+<!-- 
+    
+-->

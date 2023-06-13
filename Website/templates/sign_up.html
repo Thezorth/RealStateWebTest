@@ -1,0 +1,39 @@
+{% extends './layout.html' %}
+{% block title %}{{ sitetitle }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="align-items-center justify-content-center d-flex flex-column vh-100">
+        <div class="bordered text-white">
+            <form method="post">
+                <h3 class="text-center min-lw bg-gradient p-2 bordered bg-dark"> Sign Up</h3>
+                <br/>
+                <div class="form-group min-lw mx-3">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control text-bg-dark" id="email" name="email" placeholder="email@email.com">
+                </div>
+                <div class="form-group min-lw mx-3 mt-2">
+                    <label for="username">Username</label>
+                    <input type="text" class="form-control text-bg-dark" id="username" name="username" placeholder="Enter username">
+                </div>
+                <div class="form-group min-lw mx-3 mt-2">
+                    <label for="password1">Password</label>
+                    <input type="password" class="form-control text-bg-dark" id="password1" name="password1"
+                        placeholder="Enter password">
+                </div>
+                <div class="form-group min-lw mx-3 mt-2">
+                    <label for="password2">Password (confirm)</label>
+                    <input type="password" class="form-control text-bg-dark" id="password2" name="password2"
+                        placeholder="Confirm password">
+                </div>
+                <br />
+                <div class="text-center min-lw">
+                    <button type="submit" class="btn btn-primary w-25">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
