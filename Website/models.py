@@ -33,6 +33,8 @@ class Property(db.Model):
 
     pictures = db.relationship('Pictures', back_populates='property', lazy=True)
 
+    uploaded_by = db.Column(db.Integer, db.ForeignKey('user.id'))
+
     def __repr__(self):
         return f'Saletype:{self.saletype}, Owner:{self.owner}, Value:{self.value}, Address:{self.address}'
 

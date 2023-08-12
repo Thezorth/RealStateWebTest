@@ -28,13 +28,13 @@
 
 <body>
   
-  <div class="m-0 bg-black w-100 h-100 position-fixed" style="background-image: url(../static/images/homepage_background.jpg); background-size:auto ; background-position: bottom;">
+  <div class="m-0 bg-black w-100 h-100 position-fixed" style="background-image: url('/static/images/homepage_background.jpg'); background-size:auto ; background-position: bottom;">
     <header>
     <div class="container-fluid mynbgc p-3 text-black">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
         <a href="/" class="d-flex align-items-center text-white text-decoration-none justify-content-center position-relative" style="min-width: 256px; max-width: 256px;">
-          <img src="../static/images/realstate.png" width="150" height="50" class="img-fluid" alt="">
+          <img src="{{ url_for('static', filename='images/realstate.png') }}" width="150" height="50" class="img-fluid" alt="../static/images/realstate.png">
           </svg>
         </a>
 
@@ -45,7 +45,7 @@
         
         <div class="text-end me-5">
           {% if user.is_authenticated %}
-          <a href="/employee" class="btn btn-outline-light me-2">Mi Profile</a>
+          <a href="/profile" class="btn btn-outline-light me-2">Mi Profile</a>
           <a href="/logout" class="btn btn-outline-light me-2">Logout</a>
           {% else %}
           <a href="/login" class="btn btn-outline-light me-2">Login</a>
@@ -74,6 +74,7 @@
       {% endif %}{% endfor %} {% endif %} {% endwith %}
 
   </div>
+
   {% block body %} {% endblock %}
 
 

@@ -147,5 +147,8 @@ def sing_up():
                 db.session.add(new_user)
                 db.session.commit()
                 flash('Your account has been created.', category='success')
+
+                log = User.query.filter_by(id=new_user.id).scalar()
+                login_user(log, remember=True)
                 return redirect(url_for('views.mainpage'))
     return render_template('sign_up.html', user=current_user)
